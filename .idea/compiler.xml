@@ -8,9 +8,11 @@
         <outputRelativeToContentRoot value="true" />
         <module name="autoTestUI (2)" />
         <module name="autoTestUI (1)" />
+        <module name="autoTestUI" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="autoTestUI" target="1.7" />
       <module name="autoTestUI (1)" target="1.5" />
       <module name="autoTestUI (2)" target="1.5" />
     </bytecodeTargetLevel>

@@ -3,13 +3,11 @@ package com.noosh.nooshentry.automation.base;
 import java.io.File;
 import java.io.IOException;
 import java.util.List;
-import org.apache.log4j.Logger;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import java.util.logging.Logger;
+
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxProfile;
-import org.openqa.selenium.ie.InternetExplorerDriver;
+
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.AfterSuite;
@@ -87,7 +85,7 @@ public abstract class BaseSeleniumTest {
 	private static NooshWebDriver initBrowerDriver(String browser) throws IOException {
 		if("IE".equals(browser)){
 			String driverServerPath = BaseSeleniumTest.class.getClassLoader().getResource(IE_DRIVER_SERVER_PATH_32).getPath();
-	        System.setProperty("webdriver.ie.driver", driverServerPath);
+	        System.setProperty("webdriver.ie.driver", "D:\\chromedriver\\chromedriver.exe");
 			DesiredCapabilities ieCapabilities = DesiredCapabilities
 					.internetExplorer();
 //			ieCapabilities.setCapability( InternetExplorerDriver.INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS, true);
