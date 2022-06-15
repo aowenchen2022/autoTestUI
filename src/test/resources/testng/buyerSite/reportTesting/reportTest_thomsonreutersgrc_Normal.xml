@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Report Test" parallel="methods" thread-count="10">
+<!--  <suite name="Report Test" parallel="tests" thread-count="10" > -->
+<parameter name="browser" value="CHROME"/>
+<parameter name="loginName" value="sanjays"/> 
+<parameter name="password" value="17password"/>
+<parameter name="baseUrl" value=".birt.noosh.com:8080"/>
+<parameter name="domain" value="thomsonreutersgrc"/> 
+<test name="SP Site Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.demoSQANoosh.ReportTest">
+         <methods>  
+            <!--   -->  
+            <include name="testReport" /> 
+           
+            <!-- multiple run                                
+            <include name="testReportStep1" />  
+            <include name="testReportStep2" />
+            <include name="testReport2_2" />      -->                                                                     
+         </methods>
+      </class>
+   </classes>
+</test>
+</suite>

@@ -1,0 +1,10 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MainSuite">
+    <suite-files>
+      <suite-file path="buyerSite/SPSuppliers.xml"/>
+      <suite-file path="buyerSite/SPSuppliers2.xml"/>
+      <suite-file path="buyerSite/SPClient1.xml"/>    
+      <suite-file path="buyerSite/SPClient2.xml"/>
+      <suite-file path="buyerSite/SPClient3.xml"/>
+    </suite-files>
+</suite>

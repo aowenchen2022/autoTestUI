@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Reports Suite Acceptance Test">
+
+<!-- Mutable data for each run             -->
+<parameter name="productName1" value="Selenium"/> 
+<parameter name="siteName" value="Demo_selenium"/> 
+<parameter name="validBuyerEmail" value="seleniumtest54321"/>
+
+<test name="NGE Reports Test Suite">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.demoSQANoosh.NGEreports">
+         <methods>  
+            <include name="" />
+         </methods>
+      </class>
+    </classes>
+ </test>
+  
+</suite>
+

@@ -1,0 +1,224 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.noosh.nooshentry</groupId>
+	<artifactId>autoTestUI</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>autoTestUI</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<selenium.browser>FireFox</selenium.browser>
+		<instance.name>dist</instance.name>
+		<instance.customUI>defaultUI</instance.customUI>
+		<testngFile>testng.xml</testngFile>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium.client-drivers</groupId>
+			<artifactId>selenium-java-client-driver</artifactId>
+			<version>1.0.2</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.8</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium</artifactId>
+			<version>2.0rc2</version>
+			<type>pom</type>
+		</dependency>
+        <dependency>
+             <groupId>org.seleniumhq.selenium</groupId>
+             <artifactId>selenium-java</artifactId>
+             <version>2.43.0</version>
+        </dependency>
+        <dependency>
+             <groupId>org.seleniumhq.selenium</groupId>
+             <artifactId>selenium-server</artifactId>
+             <version>2.43.0</version>
+        </dependency> 
+        <!--          -->
+        <dependency>
+             <groupId>org.seleniumhq.selenium</groupId>
+             <artifactId>selenium-api</artifactId>
+             <version>2.43.0</version>
+        </dependency> 
+
+		<dependency>
+			<groupId>net.sourceforge.jexcelapi</groupId>
+			<artifactId>jxl</artifactId>
+			<version>2.6.12</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>javax.mail</groupId>
+			<artifactId>mail</artifactId>
+			<version>1.4.6</version>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!-- 
+			<plugin>
+			 	<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+			 	<version>1.7</version>
+			 	<executions>
+			    	<execution>
+			    		<id>runReport</id>
+			    		 <phase>integration-test</phase>
+			    		<configuration> 
+			    			<target>
+			    				<delete dir="${basedir}/reportTestLog"/>
+			    				<mkdir dir="${basedir}/reportTestLog"/>
+			    				<taskdef resource="testngtasks" classpathref="maven.test.classpath"/>
+			    				<taskdef resource="net/sf/antcontrib/antlib.xml" classpathref="maven.compile.classpath"/>
+			    				<macrodef name="runReports">
+				               		<attribute name="file" default="reportTest.xml"/>
+								   <sequential>
+										<testng classpathref="maven.test.classpath"
+									        outputdir="${project.build.directory}/testng"
+									        parallel="methods" threadCount="5" >
+									   <xmlfileset dir="${basedir}/src/test/resources/testng/buyerSite/reportTesting" includes="@{file}"/>
+									</testng>
+								   </sequential>
+								</macrodef>
+								<for list="1" param="round">
+								  <sequential>
+								    <echo>============================================</echo>
+								    <echo>===            Round: @{round}            ==</echo>
+								    <echo>============================================</echo>
+								    <parallel threadCount="7">
+				    					<runReports file="reportTest_2020promotions_Normal.xml" />
+										<runReports file="reportTest_demo_Normal.xml"/>
+									 	<runReports file="reportTest_foxrehabilitationinc_Normal.xml"/>
+									 	<runReports file="reportTest_nooshdpsg_Normal.xml"/>
+									 	<runReports file="reportTest_thomsonreutersgrc_Normal.xml"/>
+									 	<runReports file="reportTest_thomsonreutersonboarding_Normal.xml"/>
+									 	<runReports file="reportTest_whirlpool_Normal.xml"/>
+									</parallel>
+								    
+								  </sequential>
+								</for>
+			    				
+			    			</target>
+			    		</configuration>
+			    		<goals>
+                            <goal>run</goal>
+                        </goals>
+			    	</execution>
+			   	</executions>
+			   	 <dependencies>
+                	<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>1.0b3</version>
+						<exclusions>
+					    	<exclusion>
+				     			<groupId>ant</groupId>
+				     			<artifactId>ant</artifactId>
+						    </exclusion>
+					   	</exclusions>
+					</dependency>
+                </dependencies>
+			  </plugin>
+			   -->
+			<plugin> 
+				<groupId>org.apache.maven.plugins</groupId> 
+				<artifactId>maven-compiler-plugin</artifactId> 
+				<configuration> 
+				<source>1.7</source> 
+				<target>1.7</target> 
+				</configuration> 
+			</plugin>
+			<plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-surefire-plugin</artifactId>
+                <version>2.12.4</version>
+                <configuration>
+                    <skip>true</skip>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test</goal>
+                        </goals>
+                        <configuration>
+                        	<systemPropertyVariables>
+								<selenium.browser>${selenium.browser}</selenium.browser>
+								<selenium.instance>${instance.name}</selenium.instance>
+								<selenium.customUI>${instance.customUI}</selenium.customUI>
+								<selenium.domain>${selenium.domain}</selenium.domain>
+								<!-- change Browser startup command path if not default path
+								<firefoxDefaultPath></firefoxDefaultPath>
+								<iexploreDefaultPath></iexploreDefaultPath>
+								 -->
+								<buildDirectory>${project.build.directory}</buildDirectory>
+							</systemPropertyVariables>
+	                        <phase>integration-test</phase>
+	                        <suiteXmlFiles>
+			            		<suiteXmlFile>src/test/resources/testng/${testngFile}</suiteXmlFile>
+				          	</suiteXmlFiles>
+                            <skip>false</skip>
+                            <parallel>methods</parallel>
+							<threadCount>10</threadCount>
+							<groups>com.noosh.nooshentry.automation</groups>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+		</plugins>
+		<pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings
+                    only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+	                                <pluginExecutionFilter>
+	                                    <groupId>org.apache.maven.plugins</groupId>
+	                                    <artifactId>maven-resources-plugin</artifactId>
+	                                    <versionRange>[2.0,)</versionRange>
+	                                    <goals>
+	                                        <goal>resources</goal>
+	                                        <goal>testResources</goal>
+	                                    </goals>
+	                                </pluginExecutionFilter>
+	                                <action>
+	                                    <ignore />
+	                                </action>
+                            	</pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+	</build>
+</project>

@@ -1,0 +1,199 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>com.noosh.nooshentry</groupId>
+	<artifactId>autoTestUI</artifactId>
+	<version>1.0-SNAPSHOT</version>
+	<packaging>jar</packaging>
+
+	<name>autoTestUI</name>
+	<url>http://maven.apache.org</url>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<selenium.browser>FireFox</selenium.browser>
+		<instance.name>dist</instance.name>
+	</properties>
+
+	<dependencies>
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<version>4.8.1</version>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.16</version>
+		</dependency>
+		<dependency>
+			<groupId>org.seleniumhq.selenium.client-drivers</groupId>
+			<artifactId>selenium-java-client-driver</artifactId>
+			<version>1.0.1</version>
+			<scope>test</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>selenium-maven-plugin</artifactId>
+				<version>2.3</version>
+				<executions>
+					<execution>
+						<phase>pre-integration-test</phase>
+						<goals>
+							<goal>start-server</goal>
+						</goals>
+						<configuration>
+							<background>true</background>
+							<!--<firefoxProfileTemplate>${basedir}/profiles/firefox/16.0.2/</firefoxProfileTemplate> -->
+						</configuration>
+					</execution>
+
+					<execution>
+						<id>stop</id>
+						<phase>post-integration-test</phase>
+						<goals>
+							<goal>stop-server</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>org.seleniumhq.selenium</groupId>
+						<artifactId>selenium-server</artifactId>
+						<version>2.25.0</version>
+					</dependency>
+			    </dependencies>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-surefire-plugin</artifactId>
+				<version>2.12.4</version>
+				<configuration>
+					<!-- Skip the normal tests, we'll run selenium test in the integration-test
+						phase -->
+					<skip>true</skip>
+				</configuration>
+
+				<executions>
+					<execution>
+						<phase>integration-test</phase>
+						<goals>
+							<goal>test</goal>
+						</goals>
+						<configuration>
+							<systemPropertyVariables>
+								<selenium.browser>${selenium.browser}</selenium.browser>
+								<selenium.instance>${instance.name}</selenium.instance>
+								<!-- change Browser startup command path if not default path
+								<firefoxDefaultPath></firefoxDefaultPath>
+								<iexploreDefaultPath></iexploreDefaultPath>
+								 -->
+								<buildDirectory>${project.build.directory}</buildDirectory>
+							</systemPropertyVariables>
+							<includes>
+								<include>**/Test*.java</include>
+								<include>**/*Test.java</include>
+								<include>**/*TestCase.java</include>
+							</includes>
+							<excludes>
+								<exclude>**/*$*</exclude>
+							</excludes>
+							<skip>false</skip>
+							<parallel>methods</parallel>
+							<threadCount>10</threadCount>
+							<!-- <groups>com.noosh.nooshentry.autoTestUI</groups> -->
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.7</version>
+				<executions>
+					<execution>
+						<id>integration-test-reports</id>
+						<phase>integration-test</phase>
+						<configuration>
+							<target>
+								<taskdef resource="net/sf/antcontrib/antcontrib.properties"
+									classpathref="maven.plugin.classpath" />
+								<condition property="IsGenerateReport">
+									<and>
+										<available file="target/surefire-reports" type="dir" />
+										<not>
+											<isset property="maven.test.skip" />
+										</not>
+									</and>
+								</condition>
+								<if>
+									<equals arg1="${IsGenerateReport}" arg2="true" />
+									<then>
+										<junitreport todir="target/surefire-reports">
+											<fileset dir="target/surefire-reports">
+												<include name="**/*.xml" />
+											</fileset>
+											<report format="frames" todir="target/surefire-reports" />
+										</junitreport>
+									</then>
+								</if>
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<dependency>
+						<groupId>ant-contrib</groupId>
+						<artifactId>ant-contrib</artifactId>
+						<version>20020829</version>
+					</dependency>
+					<dependency>
+						<groupId>org.apache.ant</groupId>
+						<artifactId>ant-junit</artifactId>
+						<version>1.8.4</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+		<pluginManagement>
+            <plugins>
+                <!--This plugin's configuration is used to store Eclipse m2e settings
+                    only. It has no influence on the Maven build itself. -->
+                <plugin>
+                    <groupId>org.eclipse.m2e</groupId>
+                    <artifactId>lifecycle-mapping</artifactId>
+                    <version>1.0.0</version>
+                    <configuration>
+                        <lifecycleMappingMetadata>
+                            <pluginExecutions>
+                                <pluginExecution>
+	                                <pluginExecutionFilter>
+	                                    <groupId>org.apache.maven.plugins</groupId>
+	                                    <artifactId>maven-resources-plugin</artifactId>
+	                                    <versionRange>[2.0,)</versionRange>
+	                                    <goals>
+	                                        <goal>resources</goal>
+	                                        <goal>testResources</goal>
+	                                    </goals>
+	                                </pluginExecutionFilter>
+	                                <action>
+	                                    <ignore />
+	                                </action>
+                            	</pluginExecution>
+                            </pluginExecutions>
+                        </lifecycleMappingMetadata>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+	</build>
+</project>

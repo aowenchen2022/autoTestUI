@@ -1,0 +1,252 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Buyer Site Acceptance Test">
+<parameter name="browser" value="CHROME"/> 
+<!-- Mutable data for each run             -->
+<parameter name="productName" value="Copy of Brochure"/> 
+<parameter name="siteName" value="Demo_selenium"/> 
+<parameter name="validBuyerEmail" value="demo.nshtest"/>
+<!-- Data for SP and demo sites test cases -->
+<!-- SP registration data --> 
+<parameter name="firstNameSP" value="Selenium"/> 
+<parameter name="lastNameSP" value="SP"/>
+<parameter name="newLastNameSP" value="Super"/> 
+<parameter name="passwordSP" value="17password"/>
+<parameter name="wrongPasswordSP" value="178password"/>
+<parameter name="newPasswordSP" value="SQA11password"/>
+<parameter name="phoneNumberSP" value="6665553333"/>
+<parameter name="companyName" value="Selenium"/>
+<parameter name="street" value="11111 Sierra Vista"/>
+<parameter name="city" value="Mountain View"/>   
+<parameter name="state" value="California"/>   
+<parameter name="zip" value="94043"/> 
+<parameter name="specificSiteName" value="bestbuyer"/>  
+<!-- Page and popup window titles  -->
+<parameter name="wizardPopupTitle" value="Wizard"/>   
+<parameter name="myDeskPage" value="Noosh > My Desk > Summary"/>
+<parameter name="loginSQANoosh" value="Noosh > Login"/>      
+<parameter name="siteListPageTitle" value="Site List - Demo SQA - Noosh"/>
+<parameter name="dashboardPageTitle" value="Dashboard - Demo SQA - Noosh"/>
+<parameter name="loginPageTitle" value="Login - Demo SQA - Noosh"/>
+<parameter name="loginNooshDemoTitle" value="Login - Selenium"/> 
+<parameter name="dashboardDemoTitle" value="Dashboard - selenium - Noosh"/> 
+<parameter name="manageProductDemoTitle" value="Manage Products - selenium - Noosh"/> 
+<parameter name="editProductTitle" value="Edit Product"/> 
+<parameter name="createSitePopupTitle" value="Create Workspace"/>
+<!--  Adv Editor Project and product data for SP -->
+<parameter name="productNameD" value="New UI product"/>
+<parameter name="productNameAdv" value="New UI product"/>
+<parameter name="defaultValue" value="001"/>
+<parameter name="tabName" value="Not Shown Tab"/>
+<parameter name="projNameSPAdv" value="QA project SP new UI"/>
+<parameter name="descriptionNameSPAdv" value="New spec QA"/>
+<parameter name="skuAdv" value="111777"/>
+<parameter name="numberNewSpec" value="50501077"/>
+<parameter name="dimentionLength" value="0.5467"/>
+<parameter name="specName" value="Spec qa.4.5.1"/>
+<parameter name="projectNamePro" value="New project SP Pro"/>
+<parameter name="jobStatus" value="Job Reviewed"/>
+<parameter name="weekDay" value="Monday"/>
+<parameter name="buyerProjectName" value="QA project Buyer New UI"/>
+<parameter name="reqField" value="Please set the field value"/>
+<parameter name="projectStatusBuyer" value="New"/>
+<parameter name="specDescrSPAdv" value="In the United Kingdom, the term 'vine' applies almost exclusively to the grapevine. The term 'climber' is used for all climbing plants."/>
+<parameter name="requiredFieldErrorMessage" value="Please set the field value"/>
+<parameter name="numericFieldErrorMessage" value="Please input numeric value"/>
+<parameter name="weekDay" value="Sunday"/>
+<parameter name="textBox" value="Spec for customer"/>
+<parameter name="messageSubject" value="SP notification"/>
+<parameter name="contentText" value="SP created new spec for the project. It allows improve efficiency of the project."/>
+
+<!-- Uploaded files -->      
+<parameter name="headerLogo" value="uploadFile/pictures/17.jpg"/>
+<parameter name="headerLogo1" value="uploadFile/pictures/Sierra.png"/>
+<parameter name="loginContentImage" value="uploadFile/pictures/55746741_doverie.jpg"/>
+<parameter name="loginContentImage1" value="uploadFile/pictures/preferences-system.png"/>
+<parameter name="profilePicture" value="uploadFile/pictures/NewFile1.png"/> 
+<parameter name="profilePictureFile" value="NewFile1"/>
+<parameter name="newProfilePicture" value="uploadFile/pictures/CompanyLogo.png"/>  
+<parameter name="oldProfilePicture" value="uploadFile/pictures/dino_green.png"/> 
+<parameter name="buyerSiteLogo" value="uploadFile/pictures/new_profile.jpg"/>         
+<parameter name="fileImageName" value="uploadFile/pictures/Brochure_template.jpg"/> 
+<parameter name="newBuyerSiteLogo" value="uploadFile/pictures/New_company_golo.png"/>
+<parameter name="productImage" value="uploadFile/pictures/RussianRiver-Sauvignon-Blanc.jpg"/>
+<!-- App messages -->
+<parameter name="wrongOriginalPassword" value="The original password is not correct!"/> 
+<parameter name="defaultSiteMessage" value="Please Select a Site"/> 
+<parameter name="selectSiteMessage" value="Please select a site then invite"/>
+<parameter name="invalidEmailMessage" value="Please enter valid email address"/> 
+<parameter name="emailMessage" value="Please enter a email address"/> 
+<parameter name="wrongEmailMessage" value="One or more emails are incorrect, please check to make sure they are formatted correctly"/>
+<parameter name="loginNameErrorMessage" value="Please input Login Name."/>
+<parameter name="emailErrorMessage" value="Please input Email address."/>
+<!-- Customization data -->
+<parameter name="imageLogoFile" value="Sierra.png"/>
+<parameter name="imageLoginFile" value="login_cloud.png"/>
+<parameter name="loginBoxColor" value="#00FF00"/>
+<parameter name="loginBoxTextColor" value="#0000FF"/>
+<parameter name="loginBoxColor1" value="#3B5998"/>
+<parameter name="loginBoxTextColor1" value="#FFFFFF"/>
+<parameter name="headerBackgroundColor" value="#efe4dc"/>
+<parameter name="headerTextColor" value="#502b2b"/>
+<parameter name="menuBackgoundColor" value="#54f892"/>
+<parameter name="menuTextColor" value="#663333"/>
+<parameter name="headerBackgroundColor1" value="#FFFFFF"/>
+<parameter name="headerTextColor1" value="#333333"/>
+<parameter name="menuBackgoundColor1" value="#FFFFFF"/>
+<parameter name="menuTextColor1" value="#666666"/>
+<!-- Invite customers and coworkers data -->
+<parameter name="invalidNewCustomerEmail" value="mkh*dam.com"/> 
+<parameter name="validDemoUserEmail" value="nobody+buyer@noosh.com"/> 
+<parameter name="validSPEmail" value="demo.nshauto@gmail.com"/>
+<parameter name="spEmailSmoke" value="nobody+sp@noosh.com"/>
+<parameter name="supplierEmail" value="nobody+sup@noosh.com"/>
+<!-- User profile data -->
+<parameter name="profileTitlePro" value="Demo User"/>
+<parameter name="profileTitleSP" value="Tester McTester"/>
+<parameter name="pageName" value="Demo_Mikhail"/>
+<!-- Create site & product data -->
+<parameter name="newBuyerSiteName" value="Auto Clients"/>                                        
+<parameter name="newTabName" value="Demo tab"/>
+<parameter name="textBoxName" value="My report"/>
+<parameter name="dateFieldText" value="Date presentation"/>
+<parameter name="textBoxText" value="Business Reporting or Enterprise Reporting is a fundamental part of the larger movement towards improved business intelligence and knowledge management."/> 
+<!--  Project and product data for SP -->
+<parameter name="projNameSP" value="Production brochure"/> 
+<parameter name="newProjectNameSP" value="QA project SP"/>
+<parameter name="productAdvEditor" value="QA product new UI"/>
+<parameter name="projectStatus" value="New Job Received"/>
+<parameter name="descriptionNameSP" value="New spec 590"/>
+<parameter name="skuSP" value="88888"/>        
+<parameter name="quantSP" value="101"/>   
+<parameter name="specDescrSP" value="A technical specification may be developed by any of various kinds of organizations, both public and private."/>
+<parameter name="sPNewMessage" value="This is service provider message!"/>
+<parameter name="defaultValue" value="001"/>
+<!--  Spec and Estimate Noosh Pro  -->
+<parameter name="estimateTitle" value="Create Estimate for RFE:"/>
+<parameter name="quantityOne" value="5,674"/>
+<parameter name="quantityTwo" value="90,000"/>
+<parameter name="titleRFE" value="QA RFE"/>
+<parameter name="estimateTitleSupplier" value="QA RFE Supplier"/> 
+<parameter name="priceQuantOne" value="460,000"/>
+<parameter name="priceQuantTwo" value="12"/>
+<parameter name="confirmationStatus" value="successfully"/>
+<!-- Data for Buyer site test cases        -->
+<!--  URL -->
+<parameter name="baseUrlBuyerSite" value="http://www.gmail.com/"/>  
+<parameter name="baseUrlLogin" value="https://selenium572201.sqa.noosh.com/demo_selenium572201/main"/> 
+<!-- Buyer login credentials -->
+<parameter name="buyerLoginEmail" value="nobody+buyer@noosh.com"/>   
+<parameter name="passwordBuyer" value="17password"/>    
+<!-- Uploaded files -->  
+<parameter name="fileForProject1" value="uploadFile/pictures/InvidedCustomersList.png"/> 
+<parameter name="fileForProject2" value="uploadFile/pictures/InviteCustomerPopup.png"/>   
+<parameter name="fileForProject3" value="uploadFile/pictures/SitePreviewPopup.png"/>
+<parameter name="fileName1" value="InvidedCustomersList.png"/>
+<parameter name="fileName3" value="SitePreviewPopup"/>   
+<!--  Project and product data for Buyer -->
+<parameter name="projName" value="My envelope"/> 
+<parameter name="newProjectName" value="QA project Buyer"/>
+<parameter name="descriptionName" value="My spec 23"/>
+<parameter name="sku" value="77777"/>      
+<parameter name="referenceNumber" value="123456"/>   
+<parameter name="quant" value="56"/>   
+<parameter name="specDescrBuyer" value="Specification by example is a collaborative approach"/>
+<!-- Update buyer profile info -->
+<parameter name="newLastName" value="Goldfish"/> 
+<parameter name="lastNameBuyer" value="Buyer"/>
+<parameter name="wrongPassword" value="178password987"/>
+<parameter name="newPassword" value="marsik909"/>
+<parameter name="wrongOriginalPassword" value="657483iurty"/>
+<parameter name="buyerProfilePicture" value="uploadFile/pictures/Follow.png"/>
+<parameter name="newBuyerProfilePicture" value="uploadFile/pictures/My_image.png"/>
+<!-- Other -->
+<parameter name="profileTitle" value="Mike Novok"/> 
+<parameter name="fileProject1" value="InvidedCustomersList.png"/>
+<parameter name="invitationTitle" value="Mike Novok invites you to collaborate"/> 
+<parameter name="buyerNewMessage" value="This is buyer message!"/>
+<parameter name="confirmInviteMessage" value="Invitation sent successfully!"/>
+<!-- Order -->
+<parameter name="orderConfirmationText" value="You have successfully created order"/>
+<test name="Noosh Pro Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.nooshPro.TestNooshPro">
+         <methods>
+         <include name="testLoginNGE" />     
+         <!-- SP create project in the NE          -->
+         <include name="testSPcreateProjectAdvEd" />                                                          
+         <include name="testSPcreateProjectAdvEdSelectProduct" /> 
+         <include name="testSPcreateProjectAdvEdProjectWizard" />
+         <!-- 6/18/13                -->            
+         <include name="testUploadFile" />
+         <include name="testSPcreateProjectAdvEdAddProduct" /> 
+         <!-- SP go to Noosh Pro and verify spec          -->
+         <include name="testGoToNooshPro" />
+         <include name="testGoToProjectsList" />
+         <include name="testSelectSPProject" />
+         <include name="testSelectFistSpec" />
+         <include name="testVerifySpecInfo" />
+         <!-- SP edit spec          -->
+         <include name="testSpecInputInvalidData" /> 
+         <include name="testEditProjectSpec" /> 
+         <include name="testVerifySpecInfoAfterUpdate" /> 
+         <!-- SP create spec           -->
+         <include name="testSelectProduct" />  
+         <include name="testEditCreatedProject" /> 
+         <include name="testVerifyNewSpecInfo" /> 
+         <!-- SP update project, upload file and send message          -->
+         <include name="testUpdateProject" /> 
+         <include name="testSendMessage" /> 
+         <include name="testCheckMessageInList" />
+         <include name="testCheckFileInList" />  
+         <!-- SP verify project in the NE           -->
+         <include name="testGotoNGE" />   
+         <include name="testProjectVerificationNG" /> 
+         <!--   Go to Noosh Pro second time for create RFE          --> 
+         <include name="testGoToNooshProSecondTime" /> 
+         <include name="testGoToProjectsListSecondTime" />
+         <include name="testSelectSPProjectSecondTime" /> 
+         <!--  Create RFE          -->
+         <include name="testCreateRFELink" />  
+         <include name="testGotoRFE" />
+         <include name="testCreateRFE" />
+         <include name="testCheckEditMode" />
+         <include name="testSelectSupplier" /> 
+         <include name="testSendRFE" /> 
+         <!--  Login as Supplier and check spec and estimate          -->
+         <include name="testLogoutNooshPro" />  
+         <include name="testLoginAsSupplier" /> 
+         <include name="testSelectProjectAndSpec" />                        
+         <include name="testSelectProjectToEstimate" />   
+         <include name="testSupplierVerifyEstimate" /> 
+         <include name="testSelectProjectSpec" />
+         <!--  Supplier create estimate       -->                          
+         <include name="testSupplierCreateEstimate" />       
+         <include name="testSelectProjectSpecEstimateEdit" />   
+         <include name="testSendEstimate" />         
+         <!-- View and open estimate list    -->         
+         <include name="testViewEstimateList" />
+         <include name="testOpenEstimate" />  
+         <include name="testLogoutSupplier" /> 
+         <!-- SP login Noosh Pro, review Estimate -->
+         <include name="testLoginSPNooshPro" />
+         <include name="testSPOpenEstimateNP" />
+         <include name="testSPReviewEstimateNP" /> 
+         <!-- SP creates Order -->          
+         <include name="testSPCraeteOrderAward" />
+         <include name="testSPCraeteOrderOpenSpec" />
+         <include name="testSPCraeteOrder" />   
+         <include name="testSPCraeteOrderVerification" />  
+         <include name="testSPCraeteOrderOpenOrder" />
+         <include name="testLogoutSPNP" />
+         <!-- Supplier review order and accept it -->     
+         <include name="testSupplierLogin" />  
+         <include name="testReviewOrder" /> 
+         <include name="testSupplierOpenSpecInOrder" />  
+         <include name="testSupplierAcceptOrder" />
+         <include name="testSupplierLogout" />                                                                                                                                                                                                                                                                                                                                                                                               
+         </methods>
+      </class>
+   </classes>
+</test>         
+</suite>

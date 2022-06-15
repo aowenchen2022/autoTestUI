@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Test account in Totango">
+
+<parameter name="browser" value="CHROME"/> 
+<parameter name="email" value="Mikhail+group@noosh.com"/> 
+<parameter name="password" value="Orion.613"/> 
+<parameter name="account" value="nobody+sp@noosh.com"/>
+
+<test name="Test Totango">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.toTango.TestTotango">
+         <methods>
+            <!--                    -->                                                                                                                                                                                                                               
+            <include name="testLoginTotango" />
+            <include name="testSearchTotango" />
+            <include name="testGetTimeActivities" />
+            <include name="testLogout" />      
+         </methods>
+      </class>
+    </classes>
+  </test>    
+</suite>
+

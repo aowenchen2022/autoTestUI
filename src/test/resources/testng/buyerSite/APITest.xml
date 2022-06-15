@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="API Test">
+<parameter name="browser" value="CHROME"/> 
+<!-- Data for Workgroups  -->
+<parameter name="workgroupID2" value="5096272"/>
+<parameter name="workgroupID" value="5094492"/>
+<parameter name="workgroupName2" value="Noosh Selenium2"/>
+<parameter name="workgroupName" value="Noosh Selenium"/>
+<parameter name="isDefaultWG2" value="true"/>
+<parameter name="isDefaultWG1" value="false"/>
+<!-- Data for Projects   -->
+<parameter name="clientAccount" value="Client730220"/>
+<parameter name="projectId" value="9505605"/>
+<parameter name="projectName" value="QA project SP 756353"/>
+<test name="SP Site Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.apiTesting.TestNooshAPI">
+         <methods>
+         <!--  -->
+            <!--  Play ground    -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            <include name="testGetNooshAPIPlayground" />
+            <include name="testOauthSettingAndAuthorization" />
+            <include name="testStep2AuthorizationTab" />
+            <include name="testGetAccessToken" /> 
+            <include name="testGetRequest" /> 
+            <include name="testGetWorkspaceInfo" /> 
+            <include name="testGetRequestAPIWorkgroups" /> 
+            <include name="testVerificationAPIWorkgroups" /> 
+            <include name="testGetNewRequest" />
+            <include name="testGetRequestAPIProjects" />
+            <include name="testVerificationAPIProjects" />                                                    
+         </methods>
+      </class>
+    </classes>
+  </test> 
+</suite>
+

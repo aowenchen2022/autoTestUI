@@ -1,0 +1,9 @@
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="MainSuite">
+    <suite-files>         
+         <suite-file path="buyerSite/BuyerSiteIE.xml"/>
+         <!-- switch off 4/12
+         <suite-file path="buyerSite/DebugBuyerSite.xml"/>
+         -->
+    </suite-files>
+</suite>

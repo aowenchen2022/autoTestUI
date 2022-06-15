@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Buyer Site Acceptance Test">
+
+<parameter name="browser" value="INTERNET EXPLORER"/> 
+
+<!-- Mutable data for each run, to change each value +1            -->
+<parameter name="productName" value="Brochure Exhibicion17"/> 
+<parameter name="siteName" value="Demo_novok105"/> 
+<parameter name="validBuyerEmail" value="demo.nshtest+106@gmail.com"/>
+
+<!-- Data for Buyer site test cases        -->
+<parameter name="baseUrlBuyerSite" value="http://www.gmail.com/"/>  
+<parameter name="baseUrlLogin" value="http://novok.sqa.noosh.com/demo_novok40/main"/>   
+<parameter name="profileTitle" value="Mike Novok"/>   
+<parameter name="invitationTitle" value="Mike Novok invites you to collaborate"/> 
+<parameter name="firstNameBuyer" value="Nickel"/>   
+<parameter name="lastNameBuyer" value="Waldam"/>   
+<parameter name="phoneNumberBuyer" value="6502349876"/> 
+<parameter name="passwordBuyer" value="marsik90"/>   
+<parameter name="projName" value="My brochure 66"/>   
+<parameter name="fileForProject1" value="C:\tmp\InviteCustomerPopup.png"/> 
+<parameter name="fileForProject2" value="C:\tmp\SitePreviewPopup.png"/>   
+<parameter name="fileName" value="C:\tmp\SitePreviewPopup.png"/>   
+<parameter name="buyerNewMessage" value="This is buyer's message!"/>   
+<parameter name="descriptionName" value="My spec 33"/>
+<parameter name="sku" value="77777"/>      
+<parameter name="referenceNumber" value="123456"/>   
+<parameter name="quant" value="56"/>   
+<parameter name="specDescrBuyer" value="Specification by example is a collaborative approach"/>
+<test name="Buyer Site Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.buyerSite.TestBuyerSiteIExplorer">
+         <methods>
+            <include name="testLoginEmailPage" />
+            <include name="testRegisterBuyerPage" />                  
+            <include name="testBuyerSite" />
+            <include name="testBrochurePopupWindow" />
+            <include name="testNewProject" />
+            <include name="testUploadingNewFile" />
+            <include name="testSendMessageFile" />
+         </methods>
+      </class>
+   </classes>
+</test>
+
+</suite>

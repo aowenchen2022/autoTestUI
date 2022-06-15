@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Buyer Site Acceptance Test">
+
+<parameter name="browser" value="CHROME"/> 
+<!-- Mutable data for each run             -->
+<parameter name="productName1" value="Copy of Brochure"/> 
+<parameter name="siteName" value="Demo_selenium"/> 
+<parameter name="validBuyerEmail" value="demo.nshtest"/>
+<parameter name="letsBegin" value="Let's Begin!"/>
+<parameter name="projectNameForClient" value="Project"/>
+<parameter name="clientName" value="Selenium Client"/>
+<!-- Data for SP and demo sites test cases -->
+<!-- URL -->
+<parameter name="baseUrlDemo" value="https://testng.sqa.noosh.com"/>
+<parameter name="baseUrl" value="https://selenium.sqa.noosh.com/service/login"/> 
+<parameter name="baseUrlPro" value="https://sqa.noosh.com/noosh/home/login"/> 
+<parameter name="baseUrlSignUp" value="https://demo.sqa.noosh.com/service/signup"/>
+<!-- SP registration data --> 
+<parameter name="firstNameSP" value="Tester"/> 
+<parameter name="lastNameSP" value="McTester"/>
+<parameter name="newLastNameSP" value="Super"/> 
+<parameter name="passwordSP" value="17password"/>
+<parameter name="wrongPasswordSP" value="178password"/>
+<parameter name="newPasswordSP" value="SQA11password"/>
+<parameter name="phoneNumberSP" value="6665553333"/>
+<parameter name="companyName" value="Selenium"/>
+<parameter name="street" value="11111 Sierra Vista"/>
+<parameter name="city" value="Mountain View"/>   
+<parameter name="state" value="California"/>   
+<parameter name="zip" value="94043"/> 
+<parameter name="specificSiteName" value="bestbuyer"/>  
+<!-- Page and popup window titles  -->
+<parameter name="wizardPopupTitle" value="Wizard"/>   
+<parameter name="myDeskPage" value="Noosh > My Desk > Summary"/>
+<parameter name="loginSQANoosh" value="Noosh > Login"/>      
+<parameter name="siteListPageTitle" value="Site List - Demo SQA - Noosh"/>
+<parameter name="dashboardPageTitle" value="Dashboard - Demo SQA - Noosh"/>
+<parameter name="loginPageTitle" value="Login - Demo SQA - Noosh"/>
+<parameter name="loginNooshDemoTitle" value="Login - Selenium"/> 
+<parameter name="dashboardDemoTitle" value="Dashboard - selenium - Noosh"/> 
+<parameter name="manageProductDemoTitle" value="Manage Products - selenium - Noosh"/> 
+<parameter name="editProductTitle" value="Edit Product"/> 
+<parameter name="createSitePopupTitle" value="Create Workspace"/>
+<!-- Uploaded files -->      
+<parameter name="headerLogo" value="uploadFile/pictures/17.jpg"/>
+<parameter name="loginContentImage" value="uploadFile/pictures/55746741_doverie.jpg"/>
+<parameter name="profilePicture" value="uploadFile/pictures/NewFile1.png"/> 
+<parameter name="profilePictureFile" value="NewFile1"/>
+<parameter name="newProfilePictureFile" value="OldFile"/>
+<parameter name="newProfilePicture" value="uploadFile/pictures/CompanyLogo.png"/>  
+<parameter name="buyerSiteLogo" value="uploadFile/pictures/new_profile.jpg"/>         
+<parameter name="fileImageName" value="uploadFile/pictures/Brochure_template.jpg"/> 
+<parameter name="newBuyerSiteLogo" value="uploadFile/pictures/New_company_golo.png"/>
+<parameter name="productImage" value="uploadFile/pictures/RussianRiver-Sauvignon-Blanc.jpg"/>
+<parameter name="jpgFile" value="uploadFile/pictures/sculpture-photo.jpg"/>
+<!-- App messages -->
+<parameter name="wrongOriginalPassword" value="The original password is not correct!"/> 
+<parameter name="defaultSiteMessage" value="Please Select a Site"/> 
+<parameter name="selectSiteMessage" value="Please select a site then invite"/>
+<parameter name="invalidEmailMessage" value="Please enter valid email address"/> 
+<parameter name="emailMessage" value="Please enter a email address"/> 
+<parameter name="wrongEmailMessage" value="One or more emails are incorrect, please check to make sure they are formatted correctly"/>
+<parameter name="loginNameErrorMessage" value="Please input Login Name."/>
+<parameter name="emailErrorMessage" value="Please input Email address."/>
+<!-- Customization data -->
+<parameter name="imageLogoFile" value="noosh_logo.png"/>
+<parameter name="imageLoginFile" value="login_cloud.png"/>
+<parameter name="loginBoxColor" value="#FF69B4"/>
+<parameter name="loginBoxTextColor" value="#0000FF"/>
+<parameter name="headerBackgroundColor" value="#efe4dc"/>
+<parameter name="headerTextColor" value="#502b2b"/>
+<parameter name="menuBackgoundColor" value="#54f892"/>
+<parameter name="menuTextColor" value="#663333"/>
+<!-- Invite customers and coworkers data -->
+<parameter name="invalidNewCustomerEmail" value="mkh*dam.com"/> 
+<parameter name="validDemoUserEmail" value="demo@noosh.com"/> 
+<parameter name="validDemoUserEmailk" value="demo.nshtest@gmail.com"/>
+<parameter name="validSPEmail" value="demo.nshauto@gmail.com"/>
+<!-- User profile data -->
+<parameter name="profileTitlePro" value="Demo User"/>
+<parameter name="profileTitleSP" value="Tester McTester"/>
+<parameter name="pageName" value="Demo_Mikhail"/>
+<!-- Create site & product data -->
+<parameter name="newBuyerSiteName" value="Auto Client"/>                                        
+<parameter name="newTabName" value="Demo tab"/>
+<parameter name="textBoxName" value="My report"/>
+<parameter name="dateFieldText" value="Date presentation"/>
+<parameter name="textBoxText" value="Business Reporting or Enterprise Reporting is a fundamental part of the larger movement towards improved business intelligence and knowledge management."/> 
+<!--  Project and product data for SP -->
+<parameter name="projNameSP" value="Production brochure"/>
+<parameter name="newNameTextBox" value="Customer textBox"/>
+<parameter name="newNameTextBoxCopy" value="New custome product"/>
+<parameter name="textTextBox" value="Customer new product"/>
+<parameter name="emptyProductName" value="Google Glass"/> 
+<parameter name="newProjectNameSP" value="Test project SP"/>
+<parameter name="projectStatus" value="Project Reviewed"/>
+<parameter name="descriptionNameSP" value="New spec 590"/>
+<parameter name="skuSP" value="88888"/>        
+<parameter name="quantSP" value="101"/>   
+<parameter name="specDescrSP" value="A technical specification may be developed by any of various kinds of organizations, both public and private."/>
+<!--  Adv Editor Project and product data for SP -->
+<parameter name="productName" value="New UI product"/>
+<parameter name="productNameAdv" value="New UI product"/>
+<parameter name="defaultValue" value="001"/>
+<parameter name="tabName" value="Not Shown Tab"/>
+<parameter name="projNameSPAdv" value="QA project SP new UI"/>
+<parameter name="descriptionNameSPAdv" value="New spec QA"/>
+<parameter name="skuAdv" value="111777"/>
+<parameter name="specDescrSPAdv" value="In the United Kingdom, the term 'vine' applies almost exclusively to the grapevine. The term 'climber' is used for all climbing plants."/>
+<parameter name="requiredFieldErrorMessage" value="Please set the field value"/>
+<parameter name="numericFieldErrorMessage" value="Please input numeric value"/>
+<!-- Second SP project   -->
+<parameter name="secondSPprojectName" value="QA project 2 SP new UI"/>
+<parameter name="newSpecName" value="QA project spec"/>
+<parameter name="printQuant" value="1000"/>
+<parameter name="mailQuant" value="500"/>
+<parameter name="referenceNumberSpec2" value="998866"/>
+<!-- Data for Buyer site test cases        -->
+<!--  URL -->
+<parameter name="baseUrlBuyerSite" value="http://www.gmail.com/"/>  
+<parameter name="baseUrlLogin" value="https://selenium572201.sqa.noosh.com/demo_selenium572201/main"/>
+<!-- Buyer registration data -->
+<parameter name="message" value="invites you to collaborate"/>
+<parameter name="firstNameBuyer" value="Nickel"/>   
+<parameter name="lastNameBuyer" value="Waldam"/>   
+<parameter name="phoneNumberBuyer" value="6502349876"/> 
+<parameter name="passwordBuyer" value="marsik90"/> 
+<!-- Uploaded files -->  
+<parameter name="fileForProject1" value="uploadFile/pictures/InvidedCustomersList.png"/> 
+<parameter name="fileForProject2" value="uploadFile/pictures/InviteCustomerPopup.png"/>   
+<parameter name="fileForProject3" value="uploadFile/pictures/SitePreviewPopup.png"/>
+<parameter name="fileForProject4" value="uploadFile/pictures/ProductImage.png"/>
+<parameter name="fileForProject5" value="uploadFile/pictures/new_profile.jpg"/>
+<parameter name="fileName1" value="InvidedCustomersList"/>
+<parameter name="fileName3" value="SitePreviewPopup"/>
+<parameter name="fileName4" value="ProductImage.png"/> 
+<parameter name="fileName5" value="new_profile"/>
+<parameter name="newFileName" value="new_car"/>   
+<!--  Project and product data for Buyer -->
+<parameter name="buyerProjectName" value="QA project Buyer New UI"/>
+<parameter name="projName" value="My brochure"/> 
+<parameter name="newProjectName" value="test project1"/>
+<parameter name="descriptionName" value="My spec 23"/>
+<parameter name="sku" value="77777"/>      
+<parameter name="referenceNumber" value="123456"/>   
+<parameter name="quant" value="56"/>   
+<parameter name="specDescrBuyer" value="Specification by example is a collaborative approach"/>
+<parameter name="projectStatusBuyer" value="New"/>
+<parameter name="reqField" value="Please set the field value"/>
+<!-- Draft project name  -->
+<parameter name="buyerProjectNameDraft" value="QA Project Buyer Draft"/>
+<parameter name="descriptionNameDraft" value="Spec draft"/>
+<parameter name="quantDraft" value="323"/>
+<!-- Update buyer profile info -->
+<parameter name="newLastName" value="Goldfish"/> 
+<parameter name="wrongPassword" value="178password987"/>
+<parameter name="newPassword" value="marsik909"/>
+<parameter name="wrongOriginalPassword" value="657483iurty"/>
+<parameter name="newBuyerProfilePicture" value="uploadFile/pictures/Follow.png"/>
+<!-- Other -->
+<parameter name="profileTitle" value="Mike Novok"/> 
+<parameter name="fileProject1" value="InvidedCustomersList"/>
+<parameter name="fileProject3" value="SitePreviewPopup"/>
+<parameter name="invitationTitle" value="Mike Novok invites you to collaborate"/> 
+<parameter name="buyerNewMessage" value="This is buyer's message!"/>
+<parameter name="confirmInviteMessage" value="Invitation sent successfully!"/>
+<test name="SP Site Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.demoSQANoosh.TestDemoSqaFF">
+         <methods>
+            <!--  Login to demo.sqa, go to Noosh Pro and back to NE               -->                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                
+            <include name="testLoginPage" />
+            <include name="testMyDeskPage" />
+            <include name="testSiteListPage" />
+            <include name="testMyDeskPageBack" />
+            <include name="testPageDashboard" />                        
+            <!--  Register new SP and logout, login check -->
+            <include name="testRegisterNewSPSite1" />
+            <include name="testWelcomeScreen" />
+            <include name="testCreateProject" />
+            <include name="testCreateProjectProjectInfo" />
+            <include name="testNewLogoutSPSite" />           
+            <include name="testLoginDemoSqaPageBW" />                        
+            <!--     Customization           -->                                                                                                                                                                                                                                                                                                           
+            <include name="testDownloadLoginPageImages" />   
+            <include name="testLoginPageCustomization" />
+            <include name="testHeaderCustomization" />                                                                           
+            <!--     User profile            -->                                                                                                                                                                	         		                                                                          
+            <include name="testProfileInfoUpdate" />  
+            <include name="testDownloadNewProfileImage" />            
+            <include name="testResetPassword" /> 
+            <include name="testLoginBackNewPassword" />          
+            <include name="testResetPasswordBack" />            
+            <!--  SP forgot password         -->
+            <include name="testSPForgotPassword" />
+            <include name="testSPGetResetPasswordLink" />
+            <include name="testResetNewSPPassword" /> 
+            <include name="testLoginBackOldPassword" />                                                                                  
+            <!--  temporary for debug
+            <include name="testLoginDemoSqaPage" />
+            -->   
+            <!--    7.1.x TCs, existing product editing  -->                                                                                                                                                                                               
+            <include name="testDashboardDemoPage" />
+            <include name="testManageProducts" />
+            <include name="testEditProductPopup" />                                      
+            <!--  
+            <include name="testProductVerification" />
+            -->   
+            <!--    7.2.x TCs create new product  -->                                                             
+            <include name="testCreateNewProduct" /> 
+            <include name="testCreateProductPopup" />                                          
+            <!--    7.3.x TCs Create product on base Empty product     OLD TC                                                                                                                                     
+            <include name="testCreateNewProductOnBaseEmpty" />
+            <include name="testCreateProductOnBaseEmptyPopup" />
+            <include name="testCreateProductOnBaseEmptyCustomization" />
+            <include name="testProductOnBaseEmptyVerification" />  
+             --> 
+            <!--    7.5.x TCs create product using Advanced Editor start -->    
+            <include name="testGetNewProductAdvancedEditor" />
+            <include name="testAdvancedEditorBasicInfo" />
+            <include name="testCustomTabAdvancEditorTextBox" />
+            <include name="testCustomTabAdvancEditorDate" /> 
+            <include name="testCustomTabAdvancEditorNumber" />   
+            <include name="testCustomTabAdvancEditorAnotherElements" />                  
+            <!--    Temporary switched off
+            <include name="testCustomTabAdvancEditorNumberCol" /> 
+            -->           
+            <include name="testCustomTabAdvancEditorAnotherTab" />  
+            <!--  Advanced Editor end              --> 
+            <!--  Create new workspace     -->  
+            <include name="callCreateSitePopup" />
+            <include name="testCreateSite" />               
+            <!--  Invite customers       -->
+            <include name="testGetHomePage" />
+            <include name="testClientsInviteHovering" />                         
+            <!--              
+            <include name="testInviteCustomersPage" />  
+            <include name="testGetBuyerSite" />     
+            -->      
+            <!--  Edit created Buyer site, preview it, assigning product to buyer   -->          
+            <include name="testEditBuyerSiteSP" />     
+            <include name="testPreviewSite" /> 
+            <include name="testCustomeSitePage" />
+            <include name="testCustomTabAdvancEditorAssigningProductBuyer" />             
+            <!--  Invite customers using invite button  -->        
+            <include name="testInviteCoworkers" />  
+            <include name="testInviteCustomers" />           
+            <!--  Create project on base envelope                              
+            <include name="testSPcreateProject" />
+            <include name="testSPcreateProjectProjectWizard" />
+            <include name="testCreateProductIntoCreateProject" />
+            <include name="testCreateProjectVerification" /> 
+            --> 
+            <!--
+            <include name="testSPcreateProject" />
+            -->        
+            <!--  10.0 Create project on base product created in Advanced Editor start  -->          
+            <include name="testSPcreateProjectAdvEd" />                                                          
+            <include name="testSPcreateProjectAdvEdSelectProduct" /> 
+            <include name="testSPcreateProjectAdvEdProjectWizard" />
+            <include name="testUploadFile" />
+            <include name="testSPcreateProjectAdvEdAddProduct" />  
+            <include name="testCreateProductIntoCreateProjectAdvEd" /> 
+            <include name="testSPcreateProjectProductSpecEdit" />
+            <include name="testSPProjectVerificationAdvEdOB" />          
+            <!--  10.1 Create project hovering   --> 
+            <include name="testGetHomePage2" />           
+            <include name="testSPCreateProjectSelectClient" />
+            <include name="testSPCreateProjectSetProjectInfo" />
+            <include name="testSPCreateProjectSpec" /> 
+            <include name="testSPCreateProjectSelectSize" />                     
+            <include name="testSPCreateProjectUploadFile" />
+            <include name="testSPCreateProjectSubmitProject" />
+            <include name="testSPCreateProjectOpenProjectAndAssignClient" />                        
+            <!--  10.0 End and logout SP site   -->  
+            <include name="testLogoutDemoSite" />
+            <include name="testCloseSPEmail" />                                         
+            <!--  
+            <include name="testLoginSPSite" /> 
+            <include name="testCreateNewProjectPreviewMode" />    
+            -->  
+         </methods>
+      </class>
+    </classes>
+  </test>
+  <!--  temporary switch off -->
+  <test name="Buyer Site Test">
+    <classes>
+      <class name="com.noosh.nooshentry.automation.buyerSite.TestBuyerSiteFF">
+         <methods>
+            <!-- Check invitation letter in email  8/26  -->
+            <include name="testLoginEmailPage33" />
+            <!-- Buyer register and check logout, login  --> 
+            <include name="testRegisterBuyerPage" /> 
+            <include name="testLogoutBuyerSite" />  
+            <include name="testLoginBuyerSite" />            
+            <!-- Create project on base envelope product                         
+            <include name="testBuyerSite" />
+            <include name="testBrochurePopupWindow" />
+            <include name="testNewProduct" />
+            --> 
+            <!-- 8/26   -->
+            <include name="testClientVerifiesSPProject" />                      
+            <!--  13.1.1 Create project on base SP assigned product, Advanced Editor start  -->          
+            <include name="testBuyerSiteAdvEd" />
+            <include name="testProductPopupWindowAdvAd" /> 
+            <include name="testProductPopupWindowNewTabAdvAd" />
+            <include name="testProductPopupWindowFileAdvAd" />
+            <include name="testAddNewProductAdvEd" />
+            <include name="testStatusProjectVerificationAdvEd" />
+            <include name="testSpecsProjectVerificationAdvEd" />            
+            <!--            
+            <include name="testUploadedFileProjectVerificationAdvEd" />             
+            <include name="testNewProject" />
+             -->
+            <include name="testUploadingNewFile" />
+            <include name="testSendMessageFile" />            
+            <!--  13.1.1 Advanced Editor end  8/26  -->                                 
+            <include name="testLogoutBuyerSiteFinal" />            
+         </methods>
+      </class>
+    </classes>
+  </test>
+  <!--  temporary switch off -->
+  <test name="Secont time SP Site Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.demoSQANoosh.TestDemoSqaFF">
+         <methods> 
+           <include name="testLoginDemoPage" />
+           <include name="testReviewNewProject" />  
+           <include name="testUploadNewFile" />  
+           <include name="testSendMessage" />            
+           <!--  
+           <include name="testUpadateProjectInfo" />  
+           -->             
+           <include name="testSPEditSpecInlineInvalidData" />
+           <include name="testSPEditSpecInline" /> 
+           <include name="testSPEditSpecInlineValidData" />
+           <include name="testUpdateProjectStatus" />                               
+           <include name="logoutSPSite" />  
+           <!--      
+           <include name="testBuyerNotifications" /> 
+           <include name="testSPNotifications" />   
+            -->                                                                                                       
+         </methods>
+      </class>    
+   </classes>
+  </test>
+  <test name="Second time Buyer Site Test">
+    <classes>
+      <class name="com.noosh.nooshentry.automation.buyerSite.TestBuyerSiteFF">
+         <methods>
+            <!-- Project verification  --> 
+            <include name="buyerSiteLogin" />
+            <include name="testObserveProject" />
+            <include name="testSPMessageReceived" />
+            <include name="testSPFileAttached" />           
+            <!-- Copy project   -->
+            <include name="testBuyerCopyProject" />
+            <include name="testCopyProjectFieldCorrection" />            
+            <!--  
+            <include name="testCopiedProjectVerification" />
+            -->             
+            <!-- Project info update   -->            
+            <include name="testGetProfileInfo" />       
+            <include name="testProfileInfo" /> 
+            <include name="testUpdatingProfileInfo" /> 
+            <include name="testGetProfileImage" /> 
+            <include name="testSetProfileImage" />
+            <include name="testGetProfileInfo2" />             
+            <!-- Reset password    -->        
+            <include name="testGetResetPassword" />  
+            <include name="testLogoutBuyerNewPassword" />
+            <include name="testLoginBuyerSiteNewPassword" />
+            <include name="testGetProfileInfo3" />
+            <include name="testSetBuyerPasswordBack" />             
+            <include name="testLogoutBuyer" />             
+            <!-- Buyer forgot password   --> 
+            <include name="testBuyerForgotPassword" />                    
+            <include name="testGetResetPasswordLink" />
+            <include name="testResetNewBuyerPassword" />             
+         </methods>
+      </class>
+    </classes>
+  </test>    
+</suite>
+

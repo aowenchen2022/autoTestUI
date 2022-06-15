@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="Buyer Site Acceptance Test">
+
+<parameter name="browser" value="CHROME"/> 
+
+<!-- Mutable data for each run             -->
+<parameter name="productName" value="Brochure Exhibicion"/> 
+<parameter name="siteName" value="Demo_selenium"/> 
+<parameter name="validBuyerEmail" value="demo.nshtest"/>
+
+<!-- Data for SP and demo sites test cases -->
+<!-- URL -->
+<parameter name="baseUrlDemo" value="https://testng.sqa.noosh.com"/>
+<parameter name="baseUrl" value="https://selenium.sqa.noosh.com/service/login"/> 
+<parameter name="baseUrlPro" value="https://sqa.noosh.com/noosh/home/login"/> 
+<parameter name="baseUrlSignUp" value="https://demo.sqa.noosh.com/service/signup"/>
+<!-- SP registration data --> 
+<parameter name="firstNameSP" value="Tester"/> 
+<parameter name="lastNameSP" value="McTester"/>
+<parameter name="newLastNameSP" value="Super"/> 
+<parameter name="passwordSP" value="17password"/>
+<parameter name="wrongPasswordSP" value="178password"/>
+<parameter name="newPasswordSP" value="SQA11password"/>
+<parameter name="phoneNumberSP" value="6665553333"/>
+<parameter name="companyName" value="Selenium"/>
+<parameter name="street" value="11111 Sierra Vista"/>
+<parameter name="city" value="Mountain View"/>   
+<parameter name="state" value="California"/>   
+<parameter name="zip" value="94043"/> 
+<parameter name="specificSiteName" value="bestbuyer"/>  
+<!-- Page and popup window titles  -->
+<parameter name="wizardPopupTitle" value="Wizard"/>   
+<parameter name="myDeskPage" value="Noosh > My Desk > Summary"/>
+<parameter name="loginSQANoosh" value="Noosh > Login"/>      
+<parameter name="siteListPageTitle" value="Site List - Noosh Demo - Noosh"/>
+<parameter name="dashboardPageTitle" value="Dashboard - Noosh Demo - Noosh"/>
+<parameter name="loginPageTitle" value="Login - Noosh Demo - Noosh"/>
+<parameter name="loginNooshDemoTitle" value="Login - Selenium"/> 
+<parameter name="dashboardDemoTitle" value="Dashboard - selenium - Noosh"/> 
+<parameter name="manageProductDemoTitle" value="Manage Products - selenium - Noosh"/> 
+<parameter name="editProductTitle" value="Edit Product"/> 
+<parameter name="createSitePopupTitle" value="Create Site"/>
+<!-- Uploaded files -->      
+<parameter name="headerLogo" value="uploadFile/pictures/17.jpg"/>
+<parameter name="loginContentImage" value="uploadFile/pictures/55746741_doverie.jpg"/>
+<parameter name="profilePicture" value="uploadFile/pictures/NewFile1.png"/> 
+<parameter name="profilePictureFile" value="NewFile1.png"/>
+<parameter name="newProfilePicture" value="uploadFile/pictures/CompanyLogo.png"/>  
+<parameter name="buyerSiteLogo" value="uploadFile/pictures/new_profile.jpg"/>         
+<parameter name="fileImageName" value="uploadFile/pictures/Brochure_template.jpg"/> 
+<parameter name="newBuyerSiteLogo" value="uploadFile/pictures/New_company_golo.png"/>
+<!-- App messages -->
+<parameter name="wrongOriginalPassword" value="The original password is not correct!"/> 
+<parameter name="defaultSiteMessage" value="Please Select a Site"/> 
+<parameter name="selectSiteMessage" value="Please select a site then invite"/>
+<parameter name="invalidEmailMessage" value="Please enter valid email address"/> 
+<parameter name="emailMessage" value="Please enter a email address"/> 
+<parameter name="wrongEmailMessage" value="One or more emails are incorrect, please check to make sure they are formatted correctly"/>
+<parameter name="loginNameErrorMessage" value="Please input Login Name."/>
+<parameter name="emailErrorMessage" value="Please input Email address."/>
+<!-- Customization data -->
+<parameter name="imageLogoFile" value="noosh_logo.png"/>
+<parameter name="imageLoginFile" value="login_cloud.png"/>
+<parameter name="loginBoxColor" value="#FF69B4"/>
+<parameter name="loginBoxTextColor" value="#0000FF"/>
+<parameter name="headerBackgroundColor" value="#efe4dc"/>
+<parameter name="headerTextColor" value="#502b2b"/>
+<parameter name="menuBackgoundColor" value="#54f892"/>
+<parameter name="menuTextColor" value="#663333"/>
+<!-- Invite customers and coworkers data -->
+<parameter name="invalidNewCustomerEmail" value="mkh*dam.com"/> 
+<parameter name="validDemoUserEmail" value="demo@noosh.com"/> 
+<parameter name="validSPEmail" value="demo.nshauto@gmail.com"/>
+<!-- User profile data -->
+<parameter name="profileTitlePro" value="Demo User"/>
+<parameter name="profileTitleSP" value="Tester McTester"/>
+<parameter name="pageName" value="Demo_Mikhail"/>
+<!-- Create site & product data -->
+<parameter name="newBuyerSiteName" value="Full basket"/>                                        
+<parameter name="newTabName" value="Demo tab"/>
+<parameter name="textBoxName" value="My report"/>
+<parameter name="dateFieldText" value="Date presentation"/>
+<parameter name="textBoxText" value="Business Reporting or Enterprise Reporting is a fundamental part of the larger movement towards improved business intelligence and knowledge management."/> 
+<!--  Project and product data for SP -->
+<parameter name="projNameSP" value="Production brochure"/> 
+<parameter name="newProjectNameSP" value="Test project SP"/>
+<parameter name="projectStatus" value="New Job Received"/>
+<parameter name="descriptionNameSP" value="New spec 590"/>
+<parameter name="skuSP" value="88888"/>        
+<parameter name="quantSP" value="101"/>   
+<parameter name="specDescrSP" value="A technical specification may be developed by any of various kinds of organizations, both public and private."/>
+<!-- Data for Buyer site test cases        -->
+<!--  URL -->
+<parameter name="baseUrlBuyerSite" value="http://www.gmail.com/"/>  
+<parameter name="baseUrlLogin" value="https://selenium572201.sqa.noosh.com/demo_selenium572201/main"/>
+<!-- Buyer registration data -->
+<parameter name="firstNameBuyer" value="Nickel"/>   
+<parameter name="lastNameBuyer" value="Waldam"/>   
+<parameter name="phoneNumberBuyer" value="6502349876"/> 
+<parameter name="passwordBuyer" value="marsik90"/> 
+<!-- Uploaded files -->  
+<parameter name="fileForProject1" value="uploadFile/pictures/InvidedCustomersList.png"/> 
+<parameter name="fileForProject2" value="uploadFile/pictures/InviteCustomerPopup.png"/>   
+<parameter name="fileForProject3" value="uploadFile/pictures/SitePreviewPopup.png"/>
+<parameter name="fileName1" value="InvidedCustomersList.png"/>
+<parameter name="fileName3" value="SitePreviewPopup.png"/>   
+<!--  Project and product data for Buyer -->
+<parameter name="projName" value="My brochure"/> 
+<parameter name="newProjectName" value="test project"/>
+<parameter name="descriptionName" value="My spec 23"/>
+<parameter name="sku" value="77777"/>      
+<parameter name="referenceNumber" value="123456"/>   
+<parameter name="quant" value="56"/>   
+<parameter name="specDescrBuyer" value="Specification by example is a collaborative approach"/>
+<!-- Update buyer profile info -->
+<parameter name="newLastName" value="Goldfish"/> 
+<parameter name="wrongPassword" value="178password987"/>
+<parameter name="newPassword" value="marsik909"/>
+<parameter name="wrongOriginalPassword" value="657483iurty"/>
+<parameter name="newBuyerProfilePicture" value="uploadFile/pictures/Follow.png"/>
+<!-- Other -->
+<parameter name="profileTitle" value="Mike Novok"/> 
+<parameter name="fileProject1" value="InvidedCustomersList.png"/>
+<parameter name="invitationTitle" value="Mike Novok invites you to collaborate"/> 
+<parameter name="buyerNewMessage" value="This is buyer's message!"/>
+<parameter name="confirmInviteMessage" value="Invitation sent successfully!"/>
+<test name="SP Site Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.demoSQANoosh.TestDemoSqaFF">
+         <methods>
+         <!--              -->                                                            
+            <include name="testRegisterNewSPSite" />
+            <!--            
+            <include name="testLetsBegin" />
+            <include name="testNewSignup" />
+            <include name="testNewWizard" /> 
+            <include name="testLogoutSPSite" />
+            <include name="testLoginDemoSqaPageBW" />
+            -->
+            <include name="testWizardPopupStep1Page" />
+            <include name="testWizardPopupStep2Page" />
+            <include name="testWizardPopupStep3Page" />               
+            <include name="callCreateSitePopup" />
+            <include name="testCreateSite" />
+            <include name="testInviteCustomersPage" />
+            <include name="testLogoutDemoSite" /> 
+         </methods>
+      </class>
+    </classes>
+  </test>
+  <!--  temporary switch off -->
+  <test name="Buyer Site Test">
+    <classes>
+      <class name="com.noosh.nooshentry.automation.buyerSite.TestBuyerSiteFF">
+         <methods>
+            <include name="testLoginEmailPage1" />
+            <include name="testRegisterBuyerPage" /> 
+            <!-- new test case -->
+            <include name="testLogoutBuyerSite" />  
+            <include name="testLoginBuyerSite" />                            
+            <include name="testBuyerSite" />
+            <include name="testBrochurePopupWindow" />
+            <include name="testNewProduct" />
+            <include name="testNewProject" />
+            <include name="testUploadingNewFile" />
+            <include name="testSendMessageFile" />
+            <include name="testLogoutBuyerSiteFinal" />
+         </methods>
+      </class>
+    </classes>
+  </test>
+  <!--  temporary switch off -->
+  <test name="Secont time SP Site Test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.demoSQANoosh.TestDemoSqaFF">
+         <methods> 
+           <include name="testLoginDemoPage" />
+           <include name="testReviewNewProject" />  
+           <include name="testUploadNewFile" />  
+           <include name="testSendMessage" /> 
+           <include name="testUpadateProjectInfo" />  
+           <include name="logoutSPSite" />           
+           <include name="testBuyerNotifications" /> 
+           <include name="testSPNotifications" />                                                                                                       
+         </methods>
+      </class>    
+   </classes>
+  </test>
+  <test name="Second time Buyer Site Test">
+    <classes>
+      <class name="com.noosh.nooshentry.automation.buyerSite.TestBuyerSiteFF">
+         <methods>
+            <include name="buyerSiteLogin" />
+            <include name="testObserveProject" />
+            <include name="testSPMessageReceived" />
+            <include name="testSPFileAttached" />           
+            <include name="testGetProfileInfo" />       
+            <include name="testProfileInfo" /> 
+            <include name="testUpdatingProfileInfo" /> 
+            <include name="testGetProfileImage" /> 
+            <include name="testSetProfileImage" />
+            <include name="testGetProfileInfo2" />            
+            <include name="testGetResetPassword" />  
+            <include name="testLogoutBuyerNewPassword" />
+            <include name="testLoginBuyerSiteNewPassword" />
+            <include name="testGetProfileInfo3" />
+            <include name="testSetBuyerPasswordBack" />             
+            <include name="testLogoutBuyer" />
+         </methods>
+      </class>
+    </classes>
+  </test>    
+</suite>
+

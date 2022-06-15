@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
+<suite name="SQAEU test">
+
+<parameter name="browser" value="CHROME"/> 
+
+<!-- Mutable data for each run             -->
+<parameter name="productName1" value="Selenium952313"/> 
+<parameter name="siteName" value="Demo_selenium"/> 
+<!-- <parameter name="validBuyerEmail" value="demo.nshtest"/>   //10/9 comment out -->
+<parameter name="validBuyerEmail" value="seleniumtest54321"/>
+
+<!-- Data for SP and demo sites test cases -->
+<!-- URL -->
+<parameter name="baseUrlDemo" value="https://testng.sqa.noosh.com"/>
+<parameter name="baseUrl" value="https://selenium.sqa.noosh.com/service/login"/>   
+<parameter name="baseUrlPro" value="https://sqa.noosh.com/noosh/home/login"/>   
+<parameter name="baseUrlSignUp" value="https://demo.sqa.noosh.com/service/signup"/>  
+<!-- SP registration data --> 
+<parameter name="firstNameSP" value="Selenium"/>   
+<parameter name="lastNameSP" value="Wu"/>          
+<parameter name="fullNameSP" value="Jennifer W"/>
+<parameter name="emailSP" value="jennifer+sp1@noosh.com"/>
+
+<parameter name="newLastNameSP" value="SP"/> 
+<parameter name="passwordSP" value="17password"/>
+<parameter name="wrongPasswordSP" value="178password"/>
+<parameter name="newPasswordSP" value="SQA11password"/>
+<parameter name="phoneNumberSP" value="6665553333"/>
+<parameter name="companyName" value="Selenium"/>
+<parameter name="street" value="11111 Sierra Vista"/>
+<parameter name="city" value="Mountain View"/>   
+<parameter name="state" value="California"/>   
+<parameter name="zip" value="94043"/> 
+<parameter name="specificSiteName" value="Bestbuyer"/>  
+<!-- Page and popup window titles  -->
+<parameter name="wizardPopupTitle" value="Wizard"/>   
+<parameter name="myDeskPage" value="Noosh > My Desk > Summary"/>
+<parameter name="loginSQANoosh" value="Noosh > Login"/>      
+<parameter name="siteListPageTitle" value="Site List - Demo SQA - Noosh"/>
+<parameter name="dashboardPageTitle" value="Dashboard - Demo SQA - Noosh"/>
+<parameter name="loginPageTitle" value="Login - Demo SQA - Noosh"/>
+<parameter name="loginNooshDemoTitle" value="Login - Selenium"/> 
+<parameter name="dashboardDemoTitle" value="Dashboard - selenium - Noosh"/> 
+<parameter name="manageProductDemoTitle" value="Manage Products - selenium - Noosh"/> 
+<parameter name="editProductTitle" value="Edit Product"/> 
+<parameter name="createSitePopupTitle" value="Create Site"/>
+<!-- Uploaded files -->      
+<parameter name="headerLogo" value="uploadFile/pictures/17.jpg"/>
+<parameter name="loginContentImage" value="uploadFile/pictures/55746741_doverie.jpg"/>
+<parameter name="profilePicture" value="uploadFile/pictures/NewFile1.png"/> 
+<parameter name="profilePictureFile" value="NewFile1.png"/>
+<parameter name="newProfilePicture" value="uploadFile/pictures/CompanyLogo.png"/>  
+<parameter name="buyerSiteLogo" value="uploadFile/pictures/new_profile.jpg"/>         
+<parameter name="fileImageName" value="uploadFile/pictures/Brochure_template.jpg"/> 
+<parameter name="newBuyerSiteLogo" value="uploadFile/pictures/New_company_golo.png"/>
+<parameter name="productImage" value="uploadFile/pictures/RussianRiver-Sauvignon-Blanc.jpg"/>
+<!-- App messages -->
+<parameter name="wrongOriginalPassword" value="The original password is not correct!"/> 
+<parameter name="defaultSiteMessage" value="Please Select a Site"/> 
+<parameter name="selectSiteMessage" value="Please select a site then invite"/>
+<parameter name="invalidEmailMessage" value="Please enter valid email address"/> 
+<parameter name="emailMessage" value="Please enter a email address"/> 
+<parameter name="wrongEmailMessage" value="One or more emails are incorrect, please check to make sure they are formatted correctly"/>
+<parameter name="loginNameErrorMessage" value="Please input Login Name."/>
+<parameter name="emailErrorMessage" value="Please input Email address."/>
+<!-- Customization data -->
+<parameter name="imageLogoFile" value="noosh_logo.png"/>
+<parameter name="imageLoginFile" value="login_cloud.png"/>
+<parameter name="loginBoxColor" value="#FF69B4"/>
+<parameter name="loginBoxTextColor" value="#0000FF"/>
+<parameter name="headerBackgroundColor" value="#efe4dc"/>
+<parameter name="headerTextColor" value="#502b2b"/>
+<parameter name="menuBackgoundColor" value="#54f892"/>
+<parameter name="menuTextColor" value="#663333"/>
+
+<parameter name="validDemoUserEmail" value="demo@noosh.com"/> 
+<parameter name="validSPEmail" value="seleniumtest54321@noosh.com" />  
+<parameter name="email3" value="seleniumtest12345@noosh.com"/>
+<!-- User profile data -->
+<parameter name="profileTitlePro" value="Demo User"/>
+<parameter name="profileTitleSP" value="Tester McTester"/>
+<!-- <parameter name="pageName" value="Demo_Mikhail"/> -->
+<!-- Create site & product data -->
+<parameter name="newBuyerSiteName" value="Auto Client"/>                                        
+<parameter name="newTabName" value="Demo tab"/>
+<parameter name="textBoxName" value="My report"/>
+<parameter name="dateFieldText" value="Date presentation"/>
+<parameter name="textBoxText" value="Business Reporting or Enterprise Reporting is a fundamental part of the larger movement towards improved business intelligence and knowledge management."/> 
+<!--  Project and product data for SP -->
+<parameter name="projectNameField" value="Project Name"/>  
+<parameter name="clientOrWorkspace" value="Client or Workspace"/> 
+<parameter name="projNameSP" value="Selenium project"/>
+<parameter name="newNameTextBox" value="Customer textBox"/>
+<parameter name="textTextBox" value="Customer new product"/>
+<parameter name="emptyProductName" value="Google Glass"/> 
+<parameter name="newProjectNameSP" value="Test project SP"/>
+<parameter name="projectStatus" value="New Job Received"/>
+<parameter name="descriptionNameSP" value="New spec 590"/>
+<parameter name="skuSP" value="88888"/>        
+<parameter name="quantSP" value="100"/>  
+<parameter name="quantSP2" value="200"/>
+<parameter name="quantSP3" value="300"/>
+
+<parameter name="specDescrSP" value="A technical specification may be developed by any of various kinds of organizations, both public and private."/>
+<!--  Adv Editor Project and product data for SP -->
+<parameter name="productName" value="New UI product"/>
+<parameter name="productNameAdv" value="New UI product"/>
+<parameter name="defaultValue" value="001"/>
+<parameter name="tabName" value="Not Shown Tab"/>
+<parameter name="projNameSPAdv" value="QA project SP new UI"/>
+<parameter name="descriptionNameSPAdv" value="New spec QA"/>
+<parameter name="skuAdv" value="111777"/>
+<parameter name="specDescrSPAdv" value="In the United Kingdom, the term 'vine' applies almost exclusively to the grapevine. The term 'climber' is used for all climbing plants."/>
+<parameter name="requiredFieldErrorMessage" value="Please set the field value"/>
+<parameter name="numericFieldErrorMessage" value="Please input numeric value"/>
+<!-- Data for Buyer site test cases        -->
+<!--  URL -->
+<parameter name="baseUrlBuyerSite" value="http://www.gmail.com/"/>  
+<parameter name="baseUrlLogin" value="https://selenium572201.sqa.noosh.com/demo_selenium572201/main"/>
+<!-- Buyer registration data -->
+<parameter name="message" value="invites you to collaborate"/>
+<parameter name="firstNameBuyer" value="Nickel"/>   
+<parameter name="lastNameBuyer" value="Waldam"/>   
+<parameter name="phoneNumberBuyer" value="6502349876"/> 
+<parameter name="passwordBuyer" value="marsik90"/> 
+<!-- Uploaded files -->  
+<parameter name="fileForProject1" value="uploadFile/pictures/my.png"/> 
+<parameter name="fileForProject11" value="uploadFile/pictures/Sierra.png"/> 
+<parameter name="fileForProject2" value="uploadFile/pictures/InviteCustomerPopup.png"/>   
+<parameter name="fileForProject3" value="uploadFile/pictures/SitePreviewPopup.png"/>
+<parameter name="fileName1" value="InvidedCustomersList.png"/>
+<parameter name="fileName3" value="SitePreviewPopup.png"/>   
+<!--  Project and product data for Buyer -->
+<parameter name="buyerProjectName" value="QA project Buyer New UI"/>
+<parameter name="projName" value="Jennifer's Envelope"/> 
+<parameter name="newProjectName" value="test project1"/>
+<parameter name="descriptionName" value="My spec 23"/>
+<parameter name="sku" value="77777"/>      
+<parameter name="referenceNumber" value="123456"/>   
+<parameter name="quant" value="56"/>   
+<parameter name="specDescrBuyer" value="Specification by example is a collaborative approach"/>
+<parameter name="projectStatusBuyer" value="New"/>
+<parameter name="reqField" value="Please set the field value"/>
+<!-- Update buyer profile info -->
+<parameter name="newLastName" value="Goldfish"/> 
+<parameter name="wrongPassword" value="178password987"/>
+<parameter name="newPassword" value="marsik909"/>
+<parameter name="wrongOriginalPassword" value="657483iurty"/>
+<parameter name="newBuyerProfilePicture" value="uploadFile/pictures/Follow.png"/>
+<!-- Other -->
+<parameter name="clientFieldFailure" value="clientFieldFailure"/>
+<parameter name="profileTitle" value="Mike Novok"/> 
+<parameter name="fileProject1" value="InvidedCustomersList.png"/>
+<parameter name="fileProject3" value="SitePreviewPopup.png"/>
+<parameter name="invitationTitle" value="Mike Novok invites you to collaborate"/> 
+<parameter name="buyerNewMessage" value="This is buyer's message!"/>
+<parameter name="confirmInviteMessage" value="Invitation sent successfully!"/>
+<!-- Onboard Messages -->
+<parameter name="onboardMessage1_2" value="Get started below."/>
+<parameter name="onboardMessage5" value="more you can do."/>
+<parameter name="onboardMessage6" value="Project Launch Successful!"/>
+<parameter name="onboardMessage7" value="Your co-worker has been invited!"/>
+<parameter name="newBuyerEmail" value="nobody+newbuyer"/>
+<!-- Supplier 10/4 -->
+<parameter name="supplierEstBtn" value="supplierEstFailure"/>
+<parameter name="supplierName1" value="seleniumtest12345"/>
+<parameter name="supplierName2" value="seleniumtest54321+supplier1@noosh.com"/>
+<parameter name="supplierName3" value="seleniumtest54321+supplier2@noosh.com"/>
+<parameter name="newSupplierFullName" value="jennifer"/>
+<parameter name="gmailLoginPW" value="qa1234QA"/>
+<parameter name="newSupplierPasswd" value="17password"/>
+<parameter name="newSupplierCompanyName" value="1stByte"/>
+<parameter name="supplierUserName" value="sunitadmin as dgs1g1.mgr1"/>
+<parameter name="supplier2UserName" value="sunitadmin as SHS6G1MGR1"/>
+<parameter name="approverUserName" value="dho1g1mgr1"/>
+<parameter name="passwd" value="17password"/>
+<parameter name="shippingEstPrice1" value="20"/>
+<parameter name="shippingEstPrice2" value="23"/>
+<parameter name="shippingEstPrice3" value="25"/>
+<parameter name="shippingEstPrice4" value="27"/>
+<parameter name="taxPrice" value="9" />
+<parameter name="supplierPrice1" value="1000"/>
+<parameter name="supplierPrice2" value="2000"/>
+<parameter name="supplierPrice3" value="3000"/>
+<parameter name="supplierPrice4" value="4000"/>
+<parameter name="shipping2EstPrice1" value="20"/>
+<parameter name="shipping2EstPrice2" value="23"/>
+<parameter name="shipping2EstPrice3" value="25"/>
+<parameter name="shipping2EstPrice4" value="28"/>
+<parameter name="taxPrice2" value="9" />
+<parameter name="supplier2Price1" value="900"/>
+<parameter name="supplier2Price2" value="1800"/>
+<parameter name="supplier2Price3" value="2600"/>	
+<parameter name="supplier2Price4" value="3500"/>
+<parameter name="supplierLoginURL" value="/noosh/home/login"/>
+<parameter name="supplier2LoginURL" value="http://selenium1.sqa.noosh.com/service/login"/>
+<!-- Buyer login-->
+<parameter name="BuyerPassword" value="17password"/>
+<parameter name="LoginURL" value="/noosh/home/login" />
+<parameter name="BuyerLoginN" value="sunitadmin as SUNITMGR1B3"/>
+<parameter name="OutsourcerLoginN" value="sunitadmin as dgo1g1mgr1"/>
+<parameter name="AdminLoginN" value="sunitadmin as SUNITMGR1O3"/>
+<parameter name="BuyberWorkGroupNmae" value="Amber"/>
+<parameter name="SupplierWorkGroupNmae" value="Moduli Print - EUR"/>
+<parameter name="SmartFormLoginN" value="commadmin"/>
+<parameter name="AdminPassword" value="noosh123"/>
+
+<parameter name="loginUserID" value="seleniumtest12345+263945@noosh.com"/>
+<!-- <parameter name="projDesc" value="This is a selenium project."/>  -->
+
+<test name="SQA test">
+   <classes>
+      <class name="com.noosh.nooshentry.automation.nooshOne.TestReskinBuySellOrderDetail">
+         <methods>   
+    	 	<include name="testOutsourcerLogin" />
+       		<include name="testClickGlbCreateProj" />
+            <include name="testInputProjectName" />
+            <include name="testCreateProjectWizard" />
+            <include name="testCreateSpecs1" />
+            <exclude name="testDefaultOrderSummary" />
+            <include name="testCreateBuyOrder" />
+	        <include name="testCreateSpecs2" /> 
+            <include name="testCreateQuote"	/>
+            <include name="testSellOrderCreate"	/>
+    
+            
+            
+     
+          
+         </methods>
+      </class>
+    </classes>
+  </test>
+ </suite>
+

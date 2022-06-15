@@ -1,0 +1,6 @@
+/test-output
+/chromedriver.log
+/integrationTestIEDebug.bat
+
+# Project exclude paths
+/target/
